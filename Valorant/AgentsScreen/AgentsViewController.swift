@@ -1,5 +1,9 @@
 import UIKit
 
+protocol OpenCustomViewController: AnyObject {
+    func openCustomViewController()
+}
+
 final class AgentsViewController: UIViewController {
     
     private let agentsView: AgentsView
@@ -17,14 +21,20 @@ final class AgentsViewController: UIViewController {
         super.loadView()
         setupTitleVC()
         self.view = agentsView
+        agentsView.openCustomViewControllerDelegate = self
     }
     
     private func setupTitleVC() {
         navigationItem.title = "Agents"
     }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 }
 
+extension AgentsViewController: OpenCustomViewController {
+    func openCustomViewController() {
+        navigationController?.pushViewController(CustomViewController(), animated: true)
+    }
+}

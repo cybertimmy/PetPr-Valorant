@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A2BBF912C5E1AB100525BB4 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2BBF902C5E1AB100525BB4 /* CustomViewController.swift */; };
 		1A2C272D2C51108E00663790 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C272C2C51108E00663790 /* AppDelegate.swift */; };
 		1A2C272F2C51108E00663790 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C272E2C51108E00663790 /* SceneDelegate.swift */; };
 		1A2C27312C51108E00663790 /* AgentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C27302C51108E00663790 /* AgentsViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A2BBF902C5E1AB100525BB4 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		1A2C27292C51108E00663790 /* Valorant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Valorant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2C272C2C51108E00663790 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A2C272E2C51108E00663790 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A2BBF8F2C5E1A7300525BB4 /* CustomVC */ = {
+			isa = PBXGroup;
+			children = (
+				1A2BBF902C5E1AB100525BB4 /* CustomViewController.swift */,
+			);
+			path = CustomVC;
+			sourceTree = "<group>";
+		};
 		1A2C27202C51108E00663790 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +78,7 @@
 		1A2C272B2C51108E00663790 /* Valorant */ = {
 			isa = PBXGroup;
 			children = (
+				1A2BBF8F2C5E1A7300525BB4 /* CustomVC */,
 				1A358E392C59E6B500726236 /* Extension */,
 				1A2C27452C5116ED00663790 /* Resources */,
 				1A2C27402C5110B000663790 /* Services */,
@@ -194,6 +205,7 @@
 				1A2C272D2C51108E00663790 /* AppDelegate.swift in Sources */,
 				1A358E3B2C59E6C700726236 /* Extension + UIView.swift in Sources */,
 				1A358E382C59E50600726236 /* AgentsCell.swift in Sources */,
+				1A2BBF912C5E1AB100525BB4 /* CustomViewController.swift in Sources */,
 				1A2C27422C51165900663790 /* NetworkManager.swift in Sources */,
 				1A358E3F2C59FBE500726236 /* AgentModel.swift in Sources */,
 				1A2C272F2C51108E00663790 /* SceneDelegate.swift in Sources */,

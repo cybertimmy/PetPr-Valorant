@@ -21,6 +21,12 @@ final class AgentsCell: UICollectionViewCell {
         setupApperiance()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
+        nameLabel.text = nil
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -55,3 +61,4 @@ final class AgentsCell: UICollectionViewCell {
         }
     }
 }
+

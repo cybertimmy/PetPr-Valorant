@@ -3,6 +3,7 @@ import UIKit
 final class AgentsView: UIView {
     
     private var agents: [Agent] = []
+    weak var openCustomViewControllerDelegate: OpenCustomViewController?
 
     private var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -18,8 +19,8 @@ final class AgentsView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupCollectionView()
         fetchAgents()
+        setupCollectionView()
         setupApperiance()
     }
     
@@ -78,5 +79,9 @@ extension AgentsView: UICollectionViewDataSource, UICollectionViewDelegateFlowLa
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        openCustomViewControllerDelegate?.openCustomViewController()
     }
 }
