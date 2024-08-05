@@ -19,12 +19,12 @@ final class AgentsViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        setupTitleVC()
+        setupTitle()
         self.view = agentsView
         agentsView.openCustomViewControllerDelegate = self
     }
     
-    private func setupTitleVC() {
+    private func setupTitle() {
         navigationItem.title = "Agents"
     }
         

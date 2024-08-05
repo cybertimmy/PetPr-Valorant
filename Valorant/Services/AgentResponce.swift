@@ -10,5 +10,4 @@ struct Agent: Codable {
     let displayName: String
     let description: String
     let displayIcon: String
-    let backgroundGradientColors: [String]
 }

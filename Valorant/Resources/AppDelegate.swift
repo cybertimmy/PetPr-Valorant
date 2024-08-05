@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  Valorant
-//
-//  Created by Тимофей Олегович on 24.07.2024.
-//
-
 import UIKit
 
 @main

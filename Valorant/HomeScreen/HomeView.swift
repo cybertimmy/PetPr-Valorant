@@ -1,15 +1,14 @@
 import UIKit
 
-final class AgentsView: UIView {
+final class HomeView: UIView {
     
-    private var agents: [Agent] = []
-    weak var openCustomViewControllerDelegate: OpenCustomViewController?
-
+    weak var openAgentsViewControllerDelegate: OpenAgentsViewController?
+    
     private var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(AgentsCell.self, forCellWithReuseIdentifier: AgentsCell.identifer)
+        collectionView.register(HomeCell.self, forCellWithReuseIdentifier: HomeCell.identifer)
         collectionView.backgroundColor = .systemBackground
         collectionView.layer.cornerRadius = 8
         collectionView.layer.shadowOffset = CGSize(width: -4, height: 4)
@@ -19,7 +18,6 @@ final class AgentsView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        fetchAgents()
         setupCollectionView()
         setupApperiance()
     }
@@ -27,6 +25,7 @@ final class AgentsView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     private func setupCollectionView() {
         collectionView.dataSource = self
@@ -44,18 +43,16 @@ final class AgentsView: UIView {
     }
 }
 
-extension AgentsView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        agents.count
+        5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AgentsCell.identifer, for: indexPath) as? AgentsCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCell.identifer, for: indexPath) as? HomeCell else {
             fatalError()
         }
-        let agent = agents[indexPath.row]
-        cell.configure(agent: agent)
         return cell
     }
     
@@ -72,19 +69,11 @@ extension AgentsView: UICollectionViewDataSource, UICollectionViewDelegateFlowLa
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        openCustomViewControllerDelegate?.openCustomViewController()
-    }
-}
-
-extension AgentsView {
-    
-    private func fetchAgents() {
-        NetworkManager.shared.fetchAgents { [weak self] agents in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
-                self.agents = agents ?? []
-                self.collectionView.reloadData()
-            }
+        switch indexPath.item {
+        case 0: openAgentsViewControllerDelegate?.openAgentsViewController()
+        default:
+            break
         }
     }
 }
+
