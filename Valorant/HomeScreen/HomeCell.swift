@@ -6,6 +6,7 @@ final class HomeCell: UICollectionViewCell {
 
     private let imageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleToFill
         return imageView
     }()
     
@@ -41,15 +42,23 @@ final class HomeCell: UICollectionViewCell {
         contentView.layer.masksToBounds = false
     }
     
+    public func congigure(image: UIImage) {
+        imageView.image = image
+    }
+    
+    public func title(title: String) {
+        nameLabel.text = title
+    }
+    
     private func setupApperiance() {
         self.addSubviews(imageView,nameLabel)
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 80),
-            imageView.heightAnchor.constraint(equalToConstant: 80),
+            imageView.widthAnchor.constraint(equalToConstant: 140),
+            imageView.heightAnchor.constraint(equalToConstant: 140),
             
             nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
-            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 45),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -45),
         ])
     }
 }

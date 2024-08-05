@@ -4,6 +4,8 @@ final class HomeView: UIView {
     
     weak var openAgentsViewControllerDelegate: OpenAgentsViewController?
     
+    private let arrayImage: [UIImage] = [.image1!]
+    
     private var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -46,12 +48,19 @@ final class HomeView: UIView {
 extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        arrayImage.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCell.identifer, for: indexPath) as? HomeCell else {
             fatalError()
+        }
+        let images = arrayImage[indexPath.row]
+        switch indexPath.item  {
+        case 0: cell.congigure(image: images)
+                cell.title(title: "Agents")
+        default:
+            break
         }
         return cell
     }

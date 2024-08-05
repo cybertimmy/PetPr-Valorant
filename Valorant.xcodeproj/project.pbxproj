@@ -23,6 +23,7 @@
 		1AB0F3232C6106A1002F9269 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0F3222C6106A1002F9269 /* HomeViewController.swift */; };
 		1AB0F3252C61072E002F9269 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0F3242C61072E002F9269 /* HomeView.swift */; };
 		1AB0F3272C6108C9002F9269 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0F3262C6108C9002F9269 /* HomeCell.swift */; };
+		1AB0F3292C6120EC002F9269 /* Extension + UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0F3282C6120EC002F9269 /* Extension + UIImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		1AB0F3222C6106A1002F9269 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1AB0F3242C61072E002F9269 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1AB0F3262C6108C9002F9269 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		1AB0F3282C6120EC002F9269 /* Extension + UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			children = (
 				1A358E3A2C59E6C700726236 /* Extension + UIView.swift */,
 				1A358E402C59FEE900726236 /* Extenstion + UIFont.swift */,
+				1AB0F3282C6120EC002F9269 /* Extension + UIImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				1A2BBF912C5E1AB100525BB4 /* CustomViewController.swift in Sources */,
 				1A2C27422C51165900663790 /* NetworkManager.swift in Sources */,
 				1A358E3F2C59FBE500726236 /* AgentModel.swift in Sources */,
+				1AB0F3292C6120EC002F9269 /* Extension + UIImage.swift in Sources */,
 				1A2C272F2C51108E00663790 /* SceneDelegate.swift in Sources */,
 				1AB0F3232C6106A1002F9269 /* HomeViewController.swift in Sources */,
 			);
