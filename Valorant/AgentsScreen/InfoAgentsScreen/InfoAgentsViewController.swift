@@ -1,6 +1,6 @@
 import UIKit
 
-final class CustomViewController: UIViewController {
+final class InfoAgentsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

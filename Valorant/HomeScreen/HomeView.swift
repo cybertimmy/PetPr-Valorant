@@ -3,8 +3,9 @@ import UIKit
 final class HomeView: UIView {
     
     weak var openAgentsViewControllerDelegate: OpenAgentsViewController?
+    weak var openWeaponsViewControllerDelegate: OpenWeaponsViewController?
     
-    private let arrayImage: [UIImage] = [.image1!]
+    private let arrayImage: [UIImage] = [.image1!, .image2!]
     
     private var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -59,6 +60,8 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
         switch indexPath.item  {
         case 0: cell.congigure(image: images)
                 cell.title(title: "Agents")
+        case 1: cell.congigure(image: images)
+                cell.title(title: "Weapons")
         default:
             break
         }
@@ -80,6 +83,7 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.item {
         case 0: openAgentsViewControllerDelegate?.openAgentsViewController()
+        case 1: openWeaponsViewControllerDelegate?.openWeaponsViewController()
         default:
             break
         }

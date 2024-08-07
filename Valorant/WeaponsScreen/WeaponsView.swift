@@ -1,15 +1,14 @@
 import UIKit
 
-final class AgentsView: UIView {
+final class WeaponsView: UIView {
     
-    private var agents: [Agent] = []
-    weak var openInfoAgentsViewControllerDelegate: OpenInfoAgentsViewController?
-
+    private var weapons: [Weapons] = []
+    
     private var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(AgentsCell.self, forCellWithReuseIdentifier: AgentsCell.identifer)
+        collectionView.register(WeaponsCell.self, forCellWithReuseIdentifier: WeaponsCell.identifer)
         collectionView.backgroundColor = .systemBackground
         collectionView.layer.cornerRadius = 8
         collectionView.layer.shadowOffset = CGSize(width: -4, height: 4)
@@ -19,7 +18,7 @@ final class AgentsView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        fetchAgents()
+        fetchWeapons()
         setupCollectionView()
         setupApperiance()
     }
@@ -44,18 +43,18 @@ final class AgentsView: UIView {
     }
 }
 
-extension AgentsView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension WeaponsView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        agents.count
+        weapons.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AgentsCell.identifer, for: indexPath) as? AgentsCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WeaponsCell.identifer, for: indexPath) as? WeaponsCell else {
             fatalError()
         }
-        let agent = agents[indexPath.row]
-        cell.configure(agent: agent)
+        let weapons = weapons[indexPath.row]
+        cell.configure(weapons: weapons)
         return cell
     }
     
@@ -72,19 +71,19 @@ extension AgentsView: UICollectionViewDataSource, UICollectionViewDelegateFlowLa
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        openInfoAgentsViewControllerDelegate?.openInfoAgentsController()
+       print("Pressed")
     }
 }
 
-extension AgentsView {
-    
-    private func fetchAgents() {
-        NetworkManager.shared.fetchAgents { [weak self] agents in
+extension WeaponsView {
+    private func fetchWeapons() {
+        NetworkManagerWeapon.shared.fetchWeapons { [weak self] weapons in
             guard let self = self else { return }
             DispatchQueue.main.async {
-                self.agents = agents ?? []
+                self.weapons = weapons ?? []
                 self.collectionView.reloadData()
             }
         }
     }
 }
+

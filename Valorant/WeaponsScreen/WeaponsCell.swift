@@ -1,8 +1,8 @@
 import UIKit
 
-final class AgentsCell: UICollectionViewCell {
+final class WeaponsCell: UICollectionViewCell {
     
-    static let identifer = "AgentsCell"
+    static let identifer = "WeaponsCell"
 
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -44,8 +44,8 @@ final class AgentsCell: UICollectionViewCell {
     private func setupApperiance() {
         self.addSubviews(imageView,nameLabel)
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 80),
-            imageView.heightAnchor.constraint(equalToConstant: 80),
+            imageView.widthAnchor.constraint(equalToConstant: 120),
+            imageView.heightAnchor.constraint(equalToConstant: 120),
             
             nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
@@ -53,11 +53,11 @@ final class AgentsCell: UICollectionViewCell {
         ])
     }
     
-    func configure(agent: Agent) {
-        nameLabel.text = agent.displayName
-        LoadImage.shared.loadImage(from: agent.displayIcon) { [weak self] image in
+    func configure(weapons: Weapons) {
+        nameLabel.text = weapons.displayName
+        LoadImage.shared.loadImage(from: weapons.displayIcon) { [weak self] image in
             self?.imageView.image = image
-            self?.imageView.contentMode = .scaleAspectFill
+            self?.imageView.contentMode = .scaleAspectFit
         }
     }
 }

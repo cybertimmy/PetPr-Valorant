@@ -1,13 +1,9 @@
 import UIKit
 
-protocol OpenAgentsViewController: AnyObject {
-    func openAgentsViewController()
-}
-
 final class HomeViewController: UIViewController {
         
     private let homeView: HomeView
-    
+
     init() {
         self.homeView = HomeView()
         super.init(nibName: nil, bundle: nil)
@@ -20,7 +16,7 @@ final class HomeViewController: UIViewController {
     override func loadView() {
         super.loadView()
         self.view = homeView
-        homeView.openAgentsViewControllerDelegate = self
+        setupDelegates()
         setupTitle()
     }
     
@@ -28,12 +24,21 @@ final class HomeViewController: UIViewController {
         navigationItem.title = "Home"
     }
     
+    private func setupDelegates() {
+        homeView.openAgentsViewControllerDelegate = self
+        homeView.openWeaponsViewControllerDelegate = self
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 }
 
-extension HomeViewController: OpenAgentsViewController {
+extension HomeViewController: OpenAgentsViewController, OpenWeaponsViewController {
+    func openWeaponsViewController() {
+        navigationController?.pushViewController(WeaponsViewController(), animated: true)
+    }
+    
     func openAgentsViewController() {
         navigationController?.pushViewController(AgentsViewController(), animated: true)
     }

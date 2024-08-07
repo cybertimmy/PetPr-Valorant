@@ -10,4 +10,5 @@ struct Agent: Codable {
     let displayName: String
     let description: String
     let displayIcon: String
+    var isPlayableCharacter: Bool = true
 }

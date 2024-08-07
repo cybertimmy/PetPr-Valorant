@@ -1,8 +1,8 @@
 import UIKit
 
-final class AgentModel {
+final class LoadImage {
     
-    static let shared = AgentModel()
+    static let shared = LoadImage()
     
     func loadImage(from urlString: String, completion: @escaping (UIImage?) -> Void) {
         guard let url = URL(string: urlString) else {

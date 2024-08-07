@@ -1,9 +1,5 @@
 import UIKit
 
-protocol OpenCustomViewController: AnyObject {
-    func openCustomViewController()
-}
-
 final class AgentsViewController: UIViewController {
     
     private let agentsView: AgentsView
@@ -21,7 +17,7 @@ final class AgentsViewController: UIViewController {
         super.loadView()
         setupTitle()
         self.view = agentsView
-        agentsView.openCustomViewControllerDelegate = self
+        agentsView.openInfoAgentsViewControllerDelegate = self
     }
     
     private func setupTitle() {
@@ -33,8 +29,8 @@ final class AgentsViewController: UIViewController {
     }
 }
 
-extension AgentsViewController: OpenCustomViewController {
-    func openCustomViewController() {
-        navigationController?.pushViewController(CustomViewController(), animated: true)
+extension AgentsViewController: OpenInfoAgentsViewController {
+    func openInfoAgentsController() {
+        navigationController?.pushViewController(InfoAgentsViewController(), animated: true)
     }
 }
