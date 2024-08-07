@@ -77,7 +77,7 @@ extension WeaponsView: UICollectionViewDataSource, UICollectionViewDelegateFlowL
 
 extension WeaponsView {
     private func fetchWeapons() {
-        NetworkManagerWeapon.shared.fetchWeapons { [weak self] weapons in
+        NetworkManager.shared.fetchWeapons { [weak self] weapons in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 self.weapons = weapons ?? []
