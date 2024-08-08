@@ -18,7 +18,7 @@ final class WeaponsView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        fetchWeapons()
+//        fetchWeapons()
         setupCollectionView()
         setupApperiance()
     }
@@ -75,15 +75,15 @@ extension WeaponsView: UICollectionViewDataSource, UICollectionViewDelegateFlowL
     }
 }
 
-extension WeaponsView {
-    private func fetchWeapons() {
-        NetworkManager.shared.fetchWeapons { [weak self] weapons in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
-                self.weapons = weapons ?? []
-                self.collectionView.reloadData()
-            }
-        }
-    }
-}
+//extension WeaponsView {
+//    private func fetchWeapons() {
+//        NetworkManager.shared.fetchWeapons { [weak self] weapons in
+//            guard let self = self else { return }
+//            DispatchQueue.main.async {
+//                self.weapons = weapons ?? []
+//                self.collectionView.reloadData()
+//            }
+//        }
+//    }
+//}
 

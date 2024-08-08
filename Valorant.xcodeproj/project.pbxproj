@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A0E202B2C648E5F00DAFA5E /* Extenstion + URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E202A2C648E5F00DAFA5E /* Extenstion + URL.swift */; };
 		1A2BBF912C5E1AB100525BB4 /* InfoAgentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2BBF902C5E1AB100525BB4 /* InfoAgentsViewController.swift */; };
 		1A2C272D2C51108E00663790 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C272C2C51108E00663790 /* AppDelegate.swift */; };
 		1A2C272F2C51108E00663790 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C272E2C51108E00663790 /* SceneDelegate.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A0E202A2C648E5F00DAFA5E /* Extenstion + URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extenstion + URL.swift"; sourceTree = "<group>"; };
 		1A2BBF902C5E1AB100525BB4 /* InfoAgentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAgentsViewController.swift; sourceTree = "<group>"; };
 		1A2C27292C51108E00663790 /* Valorant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Valorant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2C272C2C51108E00663790 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				1A358E3A2C59E6C700726236 /* Extension + UIView.swift */,
 				1A358E402C59FEE900726236 /* Extenstion + UIFont.swift */,
 				1AB0F3282C6120EC002F9269 /* Extension + UIImage.swift */,
+				1A0E202A2C648E5F00DAFA5E /* Extenstion + URL.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				1AACBEA62C63737300DD1F1C /* WeaponsViewController.swift in Sources */,
 				1AB0F3252C61072E002F9269 /* HomeView.swift in Sources */,
 				1A358E362C59E4F700726236 /* AgentsView.swift in Sources */,
+				1A0E202B2C648E5F00DAFA5E /* Extenstion + URL.swift in Sources */,
 				1A358E412C59FEE900726236 /* Extenstion + UIFont.swift in Sources */,
 				1AACBEB42C637B5C00DD1F1C /* Protocols.swift in Sources */,
 				1A2C272D2C51108E00663790 /* AppDelegate.swift in Sources */,

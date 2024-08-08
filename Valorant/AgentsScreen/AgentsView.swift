@@ -2,7 +2,14 @@ import UIKit
 
 final class AgentsView: UIView {
     
-    private var agents: [Agent] = []
+    private var agents: [Agent] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
+    
     weak var openInfoAgentsViewControllerDelegate: OpenInfoAgentsViewController?
 
     private var collectionView: UICollectionView = {
@@ -77,13 +84,11 @@ extension AgentsView: UICollectionViewDataSource, UICollectionViewDelegateFlowLa
 }
 
 extension AgentsView {
-    
     private func fetchAgents() {
-        NetworkManager.shared.fetchAgents { [weak self] agents in
+        NetworkManager.shared.getData(url: .agentsURL, modelForParsing: AgentResponce.self) { [weak self] agents in
             guard let self = self else { return }
             DispatchQueue.main.async {
-                self.agents = agents ?? []
-                self.collectionView.reloadData()
+                self.agents = agents?.data ?? []
             }
         }
     }
