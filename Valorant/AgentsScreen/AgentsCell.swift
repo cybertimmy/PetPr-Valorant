@@ -57,7 +57,7 @@ final class AgentsCell: UICollectionViewCell {
         nameLabel.text = agent.displayName
         LoadImage.shared.loadImage(from: agent.displayIcon) { [weak self] image in
             self?.imageView.image = image
-            self?.imageView.contentMode = .scaleAspectFill
+            self?.imageView.contentMode = .scaleAspectFit
         }
     }
 }

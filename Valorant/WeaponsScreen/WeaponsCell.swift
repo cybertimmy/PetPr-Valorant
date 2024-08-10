@@ -46,10 +46,10 @@ final class WeaponsCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             imageView.widthAnchor.constraint(equalToConstant: 120),
             imageView.heightAnchor.constraint(equalToConstant: 120),
+            imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
-            nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
-            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -20),
+            nameLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
         ])
     }
     

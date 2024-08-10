@@ -2,7 +2,13 @@ import UIKit
 
 final class WeaponsView: UIView {
     
-    private var weapons: [Weapons] = []
+    private var weapons: [Weapons] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
     
     private var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -16,9 +22,10 @@ final class WeaponsView: UIView {
         return collectionView
     }()
     
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        fetchWeapons()
+        fetchWeapons()
         setupCollectionView()
         setupApperiance()
     }
@@ -59,7 +66,7 @@ extension WeaponsView: UICollectionViewDataSource, UICollectionViewDelegateFlowL
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 150, height: 120)
+        CGSize(width: 155, height: 130)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -75,15 +82,14 @@ extension WeaponsView: UICollectionViewDataSource, UICollectionViewDelegateFlowL
     }
 }
 
-//extension WeaponsView {
-//    private func fetchWeapons() {
-//        NetworkManager.shared.fetchWeapons { [weak self] weapons in
-//            guard let self = self else { return }
-//            DispatchQueue.main.async {
-//                self.weapons = weapons ?? []
-//                self.collectionView.reloadData()
-//            }
-//        }
-//    }
-//}
+extension WeaponsView {
+    private func fetchWeapons() {
+        NetworkManager.shared.getData(url: .weaponsURL, modelForParsing: WeaponsResponce.self) { [weak self] weapons in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.weapons = weapons?.data ?? []
+            }
+        }
+    }
+}
 
