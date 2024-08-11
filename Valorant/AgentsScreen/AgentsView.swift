@@ -2,6 +2,8 @@ import UIKit
 
 final class AgentsView: UIView {
     
+    weak var openInfoAgentsViewControllerDelegate: OpenInfoAgentsViewController?
+    
     private var agents: [Agent] = [] {
         didSet {
             DispatchQueue.main.async {
@@ -10,8 +12,6 @@ final class AgentsView: UIView {
         }
     }
     
-    weak var openInfoAgentsViewControllerDelegate: OpenInfoAgentsViewController?
-
     private var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -23,7 +23,7 @@ final class AgentsView: UIView {
         collectionView.layer.shadowOpacity = 0.3
         return collectionView
     }()
-    
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
         fetchAgents()
@@ -79,7 +79,8 @@ extension AgentsView: UICollectionViewDataSource, UICollectionViewDelegateFlowLa
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        openInfoAgentsViewControllerDelegate?.openInfoAgentsController()
+        let agent = agents[indexPath.item].displayName
+        openInfoAgentsViewControllerDelegate?.openInfoAgentsController(title: agent)
     }
 }
 

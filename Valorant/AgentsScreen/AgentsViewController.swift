@@ -1,7 +1,7 @@
 import UIKit
 
 final class AgentsViewController: UIViewController {
-    
+
     private let agentsView: AgentsView
     
     init() {
@@ -15,9 +15,9 @@ final class AgentsViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        setupTitle()
-        self.view = agentsView
         agentsView.openInfoAgentsViewControllerDelegate = self
+        self.view = agentsView
+        setupTitle()
     }
     
     private func setupTitle() {
@@ -29,8 +29,16 @@ final class AgentsViewController: UIViewController {
     }
 }
 
-extension AgentsViewController: OpenInfoAgentsViewController {
-    func openInfoAgentsController() {
-        navigationController?.pushViewController(InfoAgentsViewController(), animated: true)
+//2. Подписываемся на протокол
+//3.Реализовать String в другом контроллере
+
+extension AgentsViewController: OpenInfoAgentsViewController {    
+    func openInfoAgentsController(title: String) {
+        //5. Передать title
+        navigationController?.pushViewController(InfoAgentsViewController(agentName: title), animated: true)
     }
 }
+
+
+
+

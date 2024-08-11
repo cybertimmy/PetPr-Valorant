@@ -57,8 +57,7 @@ final class HomeCell: UICollectionViewCell {
             imageView.heightAnchor.constraint(equalToConstant: 140),
             
             nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
-            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 45),
-            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -45),
+            nameLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
         ])
     }
 }

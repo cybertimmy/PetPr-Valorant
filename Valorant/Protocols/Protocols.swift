@@ -8,6 +8,7 @@ protocol OpenWeaponsViewController: AnyObject {
     func openWeaponsViewController()
 }
 
+//1.Создали протокол
 protocol OpenInfoAgentsViewController: AnyObject {
-    func openInfoAgentsController()
+    func openInfoAgentsController(title: String)
 }

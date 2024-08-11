@@ -35,11 +35,12 @@ final class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: OpenAgentsViewController, OpenWeaponsViewController {
+    func openAgentsViewController() {
+        navigationController?.pushViewController(AgentsViewController(), animated: true)
+    }
+    
     func openWeaponsViewController() {
         navigationController?.pushViewController(WeaponsViewController(), animated: true)
     }
     
-    func openAgentsViewController() {
-        navigationController?.pushViewController(AgentsViewController(), animated: true)
-    }
 }

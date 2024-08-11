@@ -30,6 +30,7 @@
 		1AB0F3252C61072E002F9269 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0F3242C61072E002F9269 /* HomeView.swift */; };
 		1AB0F3272C6108C9002F9269 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0F3262C6108C9002F9269 /* HomeCell.swift */; };
 		1AB0F3292C6120EC002F9269 /* Extension + UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0F3282C6120EC002F9269 /* Extension + UIImage.swift */; };
+		1AFE07162C68AC6D00F85AF8 /* InfoAgentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFE07152C68AC6D00F85AF8 /* InfoAgentsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		1AB0F3242C61072E002F9269 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1AB0F3262C6108C9002F9269 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		1AB0F3282C6120EC002F9269 /* Extension + UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImage.swift"; sourceTree = "<group>"; };
+		1AFE07152C68AC6D00F85AF8 /* InfoAgentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAgentsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				1A2BBF902C5E1AB100525BB4 /* InfoAgentsViewController.swift */,
+				1AFE07152C68AC6D00F85AF8 /* InfoAgentsView.swift */,
 			);
 			path = InfoAgentsScreen;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				1A2C27422C51165900663790 /* NetworkManager.swift in Sources */,
 				1A358E3F2C59FBE500726236 /* LoadImage.swift in Sources */,
 				1AB0F3292C6120EC002F9269 /* Extension + UIImage.swift in Sources */,
+				1AFE07162C68AC6D00F85AF8 /* InfoAgentsView.swift in Sources */,
 				1A2C272F2C51108E00663790 /* SceneDelegate.swift in Sources */,
 				1AB0F3232C6106A1002F9269 /* HomeViewController.swift in Sources */,
 				1AACBEA82C63739200DD1F1C /* WeaponsView.swift in Sources */,
