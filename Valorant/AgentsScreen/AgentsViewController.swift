@@ -32,10 +32,10 @@ final class AgentsViewController: UIViewController {
 //2. Подписываемся на протокол
 //3.Реализовать String в другом контроллере
 
-extension AgentsViewController: OpenInfoAgentsViewController {    
-    func openInfoAgentsController(title: String) {
+extension AgentsViewController: OpenInfoAgentsViewController {
+    func openInfoAgentsController(title: String, description desription: String, imageAgent: UIImage) {
         //5. Передать title
-        navigationController?.pushViewController(InfoAgentsViewController(agentName: title), animated: true)
+        navigationController?.pushViewController(InfoAgentsViewController(agentName: title, description: desription, image: imageAgent), animated: true)
     }
 }
 

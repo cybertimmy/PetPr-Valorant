@@ -10,5 +10,5 @@ protocol OpenWeaponsViewController: AnyObject {
 
 //1.Создали протокол
 protocol OpenInfoAgentsViewController: AnyObject {
-    func openInfoAgentsController(title: String)
+    func openInfoAgentsController(title: String, description: String, imageAgent: UIImage)
 }

@@ -10,4 +10,6 @@ struct Agent: Decodable {
     let displayName: String
     let description: String
     let displayIcon: String
+    let fullPortrait: String
+    let background: String
 }

@@ -5,10 +5,14 @@ final class InfoAgentsViewController: UIViewController {
     private let infoAgentsView: InfoAgentsView
     //4.Создаем чтобы инициализтор принимал это как параметр
     private let titleName: String
+    private let descriptionAgent: String
+    private let agentImage: UIImage
     
-    init(agentName: String) {
+    init(agentName: String, description: String, image: UIImage) {
         self.titleName = agentName
-        self.infoAgentsView = InfoAgentsView(agentName:titleName)
+        self.descriptionAgent = description
+        self.agentImage = image
+        self.infoAgentsView = InfoAgentsView(agentName:titleName, description: descriptionAgent, image: image)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -19,7 +23,6 @@ final class InfoAgentsViewController: UIViewController {
     override func loadView() {
         super.loadView()
         self.view = infoAgentsView
-        setupAppereance()
     }
     
     override func viewDidLoad() {
@@ -27,6 +30,4 @@ final class InfoAgentsViewController: UIViewController {
     
     }
     
-    private func setupAppereance() {
-    }
 }

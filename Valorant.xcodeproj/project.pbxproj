@@ -101,6 +101,7 @@
 		1A2C272B2C51108E00663790 /* Valorant */ = {
 			isa = PBXGroup;
 			children = (
+				1A2BBF8F2C5E1A7300525BB4 /* InfoAgentsScreen */,
 				1AACBEB52C6383E300DD1F1C /* Model */,
 				1AACBEB22C637B5000DD1F1C /* Protocols */,
 				1AACBEA42C63734800DD1F1C /* WeaponsScreen */,
@@ -137,7 +138,6 @@
 		1A2C27462C51171200663790 /* AgentsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				1A2BBF8F2C5E1A7300525BB4 /* InfoAgentsScreen */,
 				1A2C27302C51108E00663790 /* AgentsViewController.swift */,
 				1A358E352C59E4F700726236 /* AgentsView.swift */,
 				1A358E372C59E50600726236 /* AgentsCell.swift */,
