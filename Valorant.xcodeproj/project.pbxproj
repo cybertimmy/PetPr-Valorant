@@ -30,6 +30,8 @@
 		1AB0F3252C61072E002F9269 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0F3242C61072E002F9269 /* HomeView.swift */; };
 		1AB0F3272C6108C9002F9269 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0F3262C6108C9002F9269 /* HomeCell.swift */; };
 		1AB0F3292C6120EC002F9269 /* Extension + UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0F3282C6120EC002F9269 /* Extension + UIImage.swift */; };
+		1AF9422A2C8366B900274B3B /* AbilityPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF942292C8366B900274B3B /* AbilityPresentationViewController.swift */; };
+		1AF9422C2C8366E000274B3B /* AbilityPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF9422B2C8366E000274B3B /* AbilityPresentation.swift */; };
 		1AFE07162C68AC6D00F85AF8 /* InfoAgentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFE07152C68AC6D00F85AF8 /* InfoAgentsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 		1AB0F3242C61072E002F9269 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1AB0F3262C6108C9002F9269 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		1AB0F3282C6120EC002F9269 /* Extension + UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImage.swift"; sourceTree = "<group>"; };
+		1AF942292C8366B900274B3B /* AbilityPresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityPresentationViewController.swift; sourceTree = "<group>"; };
+		1AF9422B2C8366E000274B3B /* AbilityPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityPresentation.swift; sourceTree = "<group>"; };
 		1AFE07152C68AC6D00F85AF8 /* InfoAgentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAgentsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +105,7 @@
 		1A2C272B2C51108E00663790 /* Valorant */ = {
 			isa = PBXGroup;
 			children = (
+				1AF942282C8365D700274B3B /* AbilitysScreen */,
 				1A2BBF8F2C5E1A7300525BB4 /* InfoAgentsScreen */,
 				1AACBEB52C6383E300DD1F1C /* Model */,
 				1AACBEB22C637B5000DD1F1C /* Protocols */,
@@ -201,6 +206,15 @@
 			path = HomeScreen;
 			sourceTree = "<group>";
 		};
+		1AF942282C8365D700274B3B /* AbilitysScreen */ = {
+			isa = PBXGroup;
+			children = (
+				1AF942292C8366B900274B3B /* AbilityPresentationViewController.swift */,
+				1AF9422B2C8366E000274B3B /* AbilityPresentation.swift */,
+			);
+			path = AbilitysScreen;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -286,12 +300,14 @@
 				1A358E382C59E50600726236 /* AgentsCell.swift in Sources */,
 				1AB0F3272C6108C9002F9269 /* HomeCell.swift in Sources */,
 				1A2BBF912C5E1AB100525BB4 /* InfoAgentsViewController.swift in Sources */,
+				1AF9422A2C8366B900274B3B /* AbilityPresentationViewController.swift in Sources */,
 				1A2C27422C51165900663790 /* NetworkManager.swift in Sources */,
 				1A358E3F2C59FBE500726236 /* LoadImage.swift in Sources */,
 				1AB0F3292C6120EC002F9269 /* Extension + UIImage.swift in Sources */,
 				1AFE07162C68AC6D00F85AF8 /* InfoAgentsView.swift in Sources */,
 				1A2C272F2C51108E00663790 /* SceneDelegate.swift in Sources */,
 				1AB0F3232C6106A1002F9269 /* HomeViewController.swift in Sources */,
+				1AF9422C2C8366E000274B3B /* AbilityPresentation.swift in Sources */,
 				1AACBEA82C63739200DD1F1C /* WeaponsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

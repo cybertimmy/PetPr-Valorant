@@ -5,7 +5,7 @@ final class HomeView: UIView {
     weak var openAgentsViewControllerDelegate: OpenAgentsViewController?
     weak var openWeaponsViewControllerDelegate: OpenWeaponsViewController?
     
-    private let arrayImage: [UIImage] = [.image1!, .image2!]
+    private let arrayImage: [UIImage] = [.image1!, .image2!, .image3!]
     
     private var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -62,6 +62,8 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
                 cell.title(title: "Agents")
         case 1: cell.congigure(image: images)
                 cell.title(title: "Weapons")
+        case 2: cell.congigure(image: images)
+                cell.title(title: "Maps")
         default:
             break
         }
@@ -69,15 +71,15 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 150, height: 120)
+        CGSize(width: 150, height: 140)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        30
+        70
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+        UIEdgeInsets(top: 10, left: 15, bottom: 0, right: 15)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

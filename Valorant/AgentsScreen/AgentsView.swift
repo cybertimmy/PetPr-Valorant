@@ -82,7 +82,6 @@ extension AgentsView: UICollectionViewDataSource, UICollectionViewDelegateFlowLa
         let agent = agents[indexPath.item].displayName
         let description = agents[indexPath.item].description
         let imageAgent = agents[indexPath.item].fullPortrait
-        let imageBackground = agents[indexPath.item].background
         LoadImage.shared.loadImage(from: imageAgent) { imageAgent in
             self.openInfoAgentsViewControllerDelegate?.openInfoAgentsController(title: agent, description: description, imageAgent: imageAgent!)
         }
