@@ -12,4 +12,11 @@ struct Agent: Decodable {
     let displayIcon: String
     let fullPortrait: String
     let background: String
+    let abilities: [Abilities]
+}
+
+struct Abilities: Decodable {
+    let slot: String
+    let displayName: String
+    let description: String
 }

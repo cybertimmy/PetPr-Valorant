@@ -12,7 +12,7 @@ final class InfoAgentsViewController: UIViewController {
         self.titleName = agentName
         self.descriptionAgent = description
         self.agentImage = image
-        self.infoAgentsView = InfoAgentsView(agentName:titleName, description: descriptionAgent, image: image)
+        self.infoAgentsView = InfoAgentsView(agentName: titleName, description: descriptionAgent, image: image)
         super.init(nibName: nil, bundle: nil)
     }
     

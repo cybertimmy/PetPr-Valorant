@@ -1,11 +1,11 @@
 import UIKit
 
-final class AbilityPresentationViewController: UIViewController {
+final class InfoWeaponsViewController: UIViewController {
     
-    private let abilityView: AbilityView
+    private let infoWeaponsView: InfoWeaponsView
     
     init() {
-        self.abilityView = AbilityView()
+        self.infoWeaponsView = InfoWeaponsView()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -15,10 +15,11 @@ final class AbilityPresentationViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        self.view = abilityView
+        self.view = infoWeaponsView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.systemBackground
     }
 }

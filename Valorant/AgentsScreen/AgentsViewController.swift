@@ -33,7 +33,7 @@ final class AgentsViewController: UIViewController {
 //3.Реализовать String в другом контроллере
 
 extension AgentsViewController: OpenInfoAgentsViewController {
-    func openInfoAgentsController(title: String, description desription: String, imageAgent: UIImage) {
+    func openInfoAgentsViewController(title: String, description desription: String, imageAgent: UIImage) {
         //5. Передать title
         navigationController?.pushViewController(InfoAgentsViewController(agentName: title, description: desription, image: imageAgent), animated: true)
     }

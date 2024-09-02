@@ -1,10 +1,10 @@
 import UIKit
 
-final class WeaponsView: UIView {
+final class AbilityView: UIView {
     
     weak var openInfoWeaponsViewControllerDelegate: OpenInfoWeaponsViewController?
     
-    private var weapons: [Weapons] = [] {
+    private var abilities: [Abilities] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
@@ -16,7 +16,7 @@ final class WeaponsView: UIView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(WeaponsCell.self, forCellWithReuseIdentifier: WeaponsCell.identifer)
+        collectionView.register(AbillityCell.self, forCellWithReuseIdentifier: AbillityCell.identifer)
         collectionView.backgroundColor = .systemBackground
         collectionView.layer.cornerRadius = 8
         collectionView.layer.shadowOffset = CGSize(width: -4, height: 4)
@@ -24,10 +24,8 @@ final class WeaponsView: UIView {
         return collectionView
     }()
     
-
     override init(frame: CGRect) {
         super.init(frame: frame)
-        fetchWeapons()
         setupCollectionView()
         setupApperiance()
     }
@@ -52,46 +50,16 @@ final class WeaponsView: UIView {
     }
 }
 
-extension WeaponsView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
+extension AbilityView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        weapons.count
+        abilities.count
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WeaponsCell.identifer, for: indexPath) as? WeaponsCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AbillityCell.identifer, for: indexPath) as? AbillityCell else {
             fatalError()
         }
-        let weapons = weapons[indexPath.row]
-        cell.configure(weapons: weapons)
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 155, height: 130)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        30
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        openInfoWeaponsViewControllerDelegate?.openInfoWeaponsViewController()
-    }
 }
-
-extension WeaponsView {
-    private func fetchWeapons() {
-        NetworkManager.shared.getData(url: .weaponsURL, modelForParsing: WeaponsResponce.self) { [weak self] weapons in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
-                self.weapons = weapons?.data ?? []
-            }
-        }
-    }
-}
-

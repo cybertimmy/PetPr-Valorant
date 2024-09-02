@@ -42,5 +42,4 @@ extension HomeViewController: OpenAgentsViewController, OpenWeaponsViewControlle
     func openWeaponsViewController() {
         navigationController?.pushViewController(WeaponsViewController(), animated: true)
     }
-    
 }

@@ -1,6 +1,6 @@
 import UIKit
 
-class AbilityPresentation: UIPresentationController {
+final class AbilityPresentation: UIPresentationController {
     
     private var calculatedFrameOfPresentedViewInContainerView = CGRect.zero
     private var shouldSetFrameWhenAccessingPresentedView = false
