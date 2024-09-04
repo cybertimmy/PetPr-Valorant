@@ -2,6 +2,8 @@ import UIKit
 
 final class InfoAgentsViewController: UIViewController {
     
+    var ability: Abilities?
+    
     private let infoAgentsView: InfoAgentsView
     //4.Создаем чтобы инициализтор принимал это как параметр
     private let titleName: String
@@ -23,30 +25,10 @@ final class InfoAgentsViewController: UIViewController {
     override func loadView() {
         super.loadView()
         self.view = infoAgentsView
-        goToAbilityPresentationController()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    private func goToAbilityPresentationController() {
-        infoAgentsView.abilityButton.addTarget(self, action: #selector(abilityPresentationController), for: .touchUpInside)
-    }
 }
 
-extension InfoAgentsViewController: UIViewControllerTransitioningDelegate {
-    public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        return AbilityPresentation(presentedViewController: presented, presenting: presenting)
-    }
-}
-
-extension InfoAgentsViewController {
-    @objc func abilityPresentationController() {
-        let abilityPresentationScreen = AbilityPresentationViewController()
-        abilityPresentationScreen.modalPresentationStyle = .pageSheet
-        abilityPresentationScreen.sheetPresentationController?.prefersGrabberVisible = true
-        abilityPresentationScreen.transitioningDelegate = self
-        present(abilityPresentationScreen, animated: true)
-    }
-}

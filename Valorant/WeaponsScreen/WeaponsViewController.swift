@@ -13,7 +13,6 @@ final class WeaponsViewController: UIViewController {
         super.loadView()
         self.view = weaponView
         setupTitle()
-        setupDelegate()
     }
     
     required init?(coder: NSCoder) {
@@ -27,15 +26,5 @@ final class WeaponsViewController: UIViewController {
     
     private func setupTitle() {
         navigationItem.title = "Weapons"
-    }
-    
-    private func setupDelegate() {
-        weaponView.openInfoWeaponsViewControllerDelegate = self
-    }
-}
-
-extension WeaponsViewController: OpenInfoWeaponsViewController {
-    func openInfoWeaponsViewController(weaponStats: WeaponsStats) {
-        navigationController?.pushViewController(InfoWeaponsViewController(weaponsStats: weaponStats), animated: true)
     }
 }

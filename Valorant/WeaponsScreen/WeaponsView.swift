@@ -77,13 +77,6 @@ extension WeaponsView: UICollectionViewDataSource, UICollectionViewDelegateFlowL
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Press")
-        guard let weaponStats = weapons[indexPath.row].weaponsStats else { return
-         }
-        openInfoWeaponsViewControllerDelegate?.openInfoWeaponsViewController(weaponStats: weaponStats)
-    }
 }
 
 extension WeaponsView {

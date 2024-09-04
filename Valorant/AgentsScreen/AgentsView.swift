@@ -85,6 +85,7 @@ extension AgentsView: UICollectionViewDataSource, UICollectionViewDelegateFlowLa
         LoadImage.shared.loadImage(from: imageAgent) { imageAgent in
             self.openInfoAgentsViewControllerDelegate?.openInfoAgentsViewController(title: agent, description: description, imageAgent: imageAgent!)
         }
+
     }
 }
 

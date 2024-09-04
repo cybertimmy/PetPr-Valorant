@@ -1,7 +1,6 @@
 import UIKit
 
 final class AgentsViewController: UIViewController {
-
     private let agentsView: AgentsView
     
     init() {
@@ -31,7 +30,6 @@ final class AgentsViewController: UIViewController {
 
 //2. Подписываемся на протокол
 //3.Реализовать String в другом контроллере
-
 extension AgentsViewController: OpenInfoAgentsViewController {
     func openInfoAgentsViewController(title: String, description desription: String, imageAgent: UIImage) {
         //5. Передать title

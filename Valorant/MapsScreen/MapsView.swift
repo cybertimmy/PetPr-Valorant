@@ -1,8 +1,6 @@
 import UIKit
 
-final class AbillityCell: UICollectionViewCell {
-    
-    static let identifer = "AbillityCell"
+final class MapsView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -11,4 +9,5 @@ final class AbillityCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }
