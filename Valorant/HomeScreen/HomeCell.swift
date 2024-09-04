@@ -3,12 +3,6 @@ import UIKit
 final class HomeCell: UICollectionViewCell {
     
     static let identifer = "HomeCell"
-
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
-        return imageView
-    }()
     
     private let nameLabel: UILabel = {
         let label = UILabel()
@@ -24,7 +18,6 @@ final class HomeCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        imageView.image = nil
         nameLabel.text = nil
     }
     
@@ -41,23 +34,16 @@ final class HomeCell: UICollectionViewCell {
         contentView.layer.shadowRadius = 6
         contentView.layer.masksToBounds = false
     }
-    
-    public func congigure(image: UIImage) {
-        imageView.image = image
-    }
-    
+        
     public func title(title: String) {
         nameLabel.text = title
     }
     
     private func setupApperiance() {
-        self.addSubviews(imageView,nameLabel)
+        self.addSubviews(nameLabel)
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 140),
-            imageView.heightAnchor.constraint(equalToConstant: 140),
-            
-            nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
             nameLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            nameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
         ])
     }
 }

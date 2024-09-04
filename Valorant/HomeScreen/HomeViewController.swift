@@ -27,6 +27,7 @@ final class HomeViewController: UIViewController {
     private func setupDelegates() {
         homeView.openAgentsViewControllerDelegate = self
         homeView.openWeaponsViewControllerDelegate = self
+        homeView.openMapsViewControllerDelegate = self
     }
     
     override func viewDidLoad() {
@@ -34,7 +35,11 @@ final class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController: OpenAgentsViewController, OpenWeaponsViewController {
+extension HomeViewController: OpenAgentsViewController, OpenWeaponsViewController, OpenMapsViewController {
+    func openMapsViewController() {
+        navigationController?.pushViewController(MapsViewController(), animated: true)
+    }
+    
     func openAgentsViewController() {
         navigationController?.pushViewController(AgentsViewController(), animated: true)
     }

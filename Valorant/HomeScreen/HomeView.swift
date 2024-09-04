@@ -4,9 +4,8 @@ final class HomeView: UIView {
     
     weak var openAgentsViewControllerDelegate: OpenAgentsViewController?
     weak var openWeaponsViewControllerDelegate: OpenWeaponsViewController?
-    
-    private let arrayImage: [UIImage] = [.image1!, .image2!, .image3!]
-    
+    weak var openMapsViewControllerDelegate: OpenMapsViewController?
+        
     private var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -21,6 +20,7 @@ final class HomeView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupBackgroundColor()
         setupCollectionView()
         setupApperiance()
     }
@@ -29,6 +29,9 @@ final class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private func setupBackgroundColor() {
+        self.backgroundColor = .black
+    }
     
     private func setupCollectionView() {
         collectionView.dataSource = self
@@ -49,21 +52,17 @@ final class HomeView: UIView {
 extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        arrayImage.count
+       3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCell.identifer, for: indexPath) as? HomeCell else {
             fatalError()
         }
-        let images = arrayImage[indexPath.row]
         switch indexPath.item  {
-        case 0: cell.congigure(image: images)
-                cell.title(title: "Agents")
-        case 1: cell.congigure(image: images)
-                cell.title(title: "Weapons")
-        case 2: cell.congigure(image: images)
-                cell.title(title: "Maps")
+        case 0: cell.title(title: "Agents")
+        case 1: cell.title(title: "Weapons")
+        case 2: cell.title(title: "Maps")
         default:
             break
         }
@@ -71,21 +70,22 @@ extension HomeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 150, height: 140)
+        CGSize(width: 140, height: 110)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        70
+        30
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        UIEdgeInsets(top: 10, left: 15, bottom: 0, right: 15)
+        UIEdgeInsets(top: 15, left: 30, bottom: 0, right: 30)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.item {
         case 0: openAgentsViewControllerDelegate?.openAgentsViewController()
         case 1: openWeaponsViewControllerDelegate?.openWeaponsViewController()
+        case 2: openMapsViewControllerDelegate?.openMapsViewController()
         default:
             break
         }

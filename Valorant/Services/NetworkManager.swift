@@ -3,7 +3,7 @@ import Foundation
  final class Constants {
     static let agentsID = "https://valorant-api.com/v1/agents?isPlayableCharacter=true"
     static let weaponsID = "https://valorant-api.com/v1/weapons"
-    static let mapID = "https://valorant-api.com/v1/maps"
+    static let mapsID = "https://valorant-api.com/v1/maps"
 }
 
 final class NetworkManager {
