@@ -21,12 +21,14 @@ final class InfoAgentsView: UIView {
         label.font = .boldFont(ofSize: 30)
         return label
     }()
+    
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = .lightFont(ofSize: 20)
         label.numberOfLines = 50
         return label
     }()
+    
     private let agentImage: UIImageView = {
         let image = UIImageView()
         return image

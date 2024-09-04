@@ -2,12 +2,14 @@ import UIKit
 
 final class InfoWeaponsView: UIView {
     
-    private var weaponsStats: [WeaponsStats] = [] {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+    private let weaponStats: WeaponsStats
+    
+    init(weaponStats: WeaponsStats) {
+        self.weaponStats = weaponStats
+        super.init(frame: .zero)
+        setupTableView()
+        setupBackgroundColor()
+        setupApperiance()
     }
     
     public let tableView: UITableView = {
@@ -16,13 +18,6 @@ final class InfoWeaponsView: UIView {
         return tableView
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        updateWeaponsStats(with: weaponsStats)
-        setupTableView()
-        setupBackgroundColor()
-        setupApperiance()
-    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -46,28 +41,40 @@ final class InfoWeaponsView: UIView {
             tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
         ])
     }
-    
-    private func updateWeaponsStats(with stats: [WeaponsStats]) {
-        self.weaponsStats = stats
-        print("WeaponsStats count: \(weaponsStats.count)")
-    }
 }
 
 extension InfoWeaponsView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        weaponsStats.count
+        return 7
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: InfoWeaponsCell.identiferCell, for: indexPath) as? InfoWeaponsCell else {
             fatalError()
         }
-        let weaponStats = weaponsStats[indexPath.row] // Получаем объект WeaponsStats
-        print("Configuring cell at index \(indexPath.row) with stats: \(weaponStats)") // Логирование объекта WeaponsStats
-        cell.configure(stats: weaponStats) // Передаем весь объект в метод configure
-        // Настраиваем текст метки на основе fireRate
-        cell.textLabel?.text = String(weaponStats.fireRate)
-        return cell
+        switch indexPath.row {
+              case 0:
+                  cell.configure(title: "Fire Rate", value: "\(weaponStats.fireRate)")
+              case 1:
+                  cell.configure(title: "Magazine Size", value: "\(weaponStats.magazineSize)")
+              case 2:
+                  cell.configure(title: "Run Speed Multiplier", value: "\(weaponStats.runSpeedMultiplier)")
+              case 3:
+                  cell.configure(title: "Equip Time (Seconds)", value: "\(weaponStats.equipTimeSeconds)")
+              case 4:
+                  cell.configure(title: "Reload Time (Seconds)", value: "\(weaponStats.reloadTimeSeconds)")
+              case 5:
+                  cell.configure(title: "First Bullet Accuracy", value: "\(weaponStats.firstBulletAccuracy)")
+              case 6:
+                  cell.configure(title: "Shotgun Pellet Count", value: "\(weaponStats.shotgunPelletCount)")
+              default:
+                  break
+              }
+              return cell
+          }
     }
-}
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Edd")
+    }
 

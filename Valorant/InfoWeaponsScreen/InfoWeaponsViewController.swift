@@ -4,8 +4,8 @@ final class InfoWeaponsViewController: UIViewController {
     
     private let infoWeaponsView: InfoWeaponsView
     
-    init() {
-        self.infoWeaponsView = InfoWeaponsView()
+    init(weaponsStats: WeaponsStats) {
+        self.infoWeaponsView = InfoWeaponsView(weaponStats: weaponsStats)
         super.init(nibName: nil, bundle: nil)
     }
     

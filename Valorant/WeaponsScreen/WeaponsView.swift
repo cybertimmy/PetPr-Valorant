@@ -24,7 +24,6 @@ final class WeaponsView: UIView {
         return collectionView
     }()
     
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         fetchWeapons()
@@ -80,7 +79,10 @@ extension WeaponsView: UICollectionViewDataSource, UICollectionViewDelegateFlowL
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        openInfoWeaponsViewControllerDelegate?.openInfoWeaponsViewController()
+        print("Press")
+        guard let weaponStats = weapons[indexPath.row].weaponsStats else { return
+         }
+        openInfoWeaponsViewControllerDelegate?.openInfoWeaponsViewController(weaponStats: weaponStats)
     }
 }
 

@@ -14,5 +14,5 @@ protocol OpenInfoAgentsViewController: AnyObject {
 }
 
 protocol OpenInfoWeaponsViewController: AnyObject {
-    func openInfoWeaponsViewController()
+    func openInfoWeaponsViewController(weaponStats: WeaponsStats)
 }

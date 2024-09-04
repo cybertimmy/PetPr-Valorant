@@ -34,9 +34,8 @@ final class WeaponsViewController: UIViewController {
     }
 }
 
-
 extension WeaponsViewController: OpenInfoWeaponsViewController {
-    func openInfoWeaponsViewController() {
-        navigationController?.pushViewController(InfoWeaponsViewController(), animated: true)
+    func openInfoWeaponsViewController(weaponStats: WeaponsStats) {
+        navigationController?.pushViewController(InfoWeaponsViewController(weaponsStats: weaponStats), animated: true)
     }
 }
